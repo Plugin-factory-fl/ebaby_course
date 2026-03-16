@@ -39,7 +39,7 @@ function renderAccount() {
       </form>
       <div class="spacer"></div>
       <p class="muted-link">
-        Already have a local account? <button type="button" id="show-login">Log in</button>
+        Already have a local Ebaby account? <button type="button" id="show-login">Log in</button>
       </p>
     `;
 
@@ -128,8 +128,8 @@ function renderLogin() {
   const root = document.getElementById("account-root");
   if (!root) return;
   root.innerHTML = `
-    <h1 class="account-title">Log in to your account</h1>
-    <p class="account-subtitle">If you created a local account on this device, log in to manage your membership.</p>
+    <h1 class="account-title">Log in to your Ebaby account</h1>
+    <p class="account-subtitle">If you created a local Ebaby account on this device, log in to manage your membership.</p>
     <form class="account-form" id="login-form">
       <div class="field">
         <label for="login-email">Email</label>
@@ -144,7 +144,7 @@ function renderLogin() {
     </form>
     <div class="spacer"></div>
     <p class="muted-link">
-      New here? <button type="button" id="show-signup">Create an account</button>
+      New here? <button type="button" id="show-signup">Create an Ebaby account</button>
     </p>
   `;
   const loginForm = document.getElementById("login-form");
