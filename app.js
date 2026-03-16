@@ -40,6 +40,15 @@ function initNav() {
     yearEl.textContent = String(new Date().getFullYear());
   }
 
+  const navCta = document.querySelector(".nav-cta");
+  if (navCta) {
+    if (hasActiveMembership()) {
+      navCta.classList.add("hidden");
+    } else {
+      navCta.classList.remove("hidden");
+    }
+  }
+
   initFloatingCta(page);
 }
 
