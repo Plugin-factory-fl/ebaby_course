@@ -471,6 +471,14 @@ button {
   justify-content: center;
 }
 
+.intro-placeholder-img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
 .hero-video-frame {
   width: 240px;
   max-width: 100%;
