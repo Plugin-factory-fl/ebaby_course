@@ -14,9 +14,9 @@ function renderAccount() {
 
   if (!user) {
     root.innerHTML = `
-      <h1 class="account-title">Create your ebaby account</h1>
+      <h1 class="account-title">Create your Ebaby account</h1>
       <p class="account-subtitle">
-        Join the membership and unlock the full at-home + club dance course with Erynn Joi (ebaby).
+        Join the membership and unlock the full at-home + club dance course with Erynn Joi (Ebaby).
       </p>
       <form class="account-form" id="signup-form">
         <div class="field">
@@ -68,7 +68,7 @@ function renderAccount() {
   if (!user.hasActiveMembership) {
     root.innerHTML = `
       <h1 class="account-title">Your membership</h1>
-      <p class="account-subtitle">Turn on your membership to unlock the full ebaby course.</p>
+      <p class="account-subtitle">Turn on your membership to unlock the full Ebaby course.</p>
       <div class="stack">
         <div class="row">
           <div>
@@ -99,7 +99,7 @@ function renderAccount() {
   root.innerHTML = `
     <h1 class="account-title">You’re in.</h1>
     <p class="account-subtitle">
-      Your ebaby membership is active. Head to the course page to start training.
+      Your Ebaby membership is active. Head to the course page to start training.
     </p>
     <div class="stack">
       <div class="row">
