@@ -39,6 +39,8 @@ function initNav() {
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
+
+  initFloatingCta(page);
 }
 
 function protectCoursePage() {
@@ -53,6 +55,22 @@ function protectCoursePage() {
     locked.classList.remove("hidden");
     content.classList.add("hidden");
   }
+}
+
+function initFloatingCta(page) {
+  const existing = document.getElementById("floating-membership-cta");
+  if (existing) {
+    existing.remove();
+  }
+  const shouldShow = !hasActiveMembership() && (page === "home" || page === "course");
+  if (!shouldShow) return;
+
+  const btn = document.createElement("a");
+  btn.id = "floating-membership-cta";
+  btn.href = "account.html?start=1";
+  btn.className = "btn btn-primary floating-cta";
+  btn.textContent = "Start your membership";
+  document.body.appendChild(btn);
 }
 
 document.addEventListener("DOMContentLoaded", initNav);

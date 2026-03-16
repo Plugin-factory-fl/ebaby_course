@@ -1,6 +1,6 @@
-# ebaby dance course site
+# Sexy Moves by Ebaby site
 
-Static marketing and course experience for the ebaby dance membership. This version runs entirely in the browser using HTML/CSS/JS and `localStorage` to simulate accounts and memberships.
+Static marketing and course experience for the Sexy Moves by Ebaby membership. This version runs entirely in the browser using HTML/CSS/JS and `localStorage` to simulate accounts and memberships.
 
 ## Pages
 

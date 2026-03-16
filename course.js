@@ -7,7 +7,7 @@ const courseSections = [
         id: "grounding-groove",
         title: "Grounding & groove basics",
         duration: "9 min",
-        videoSrc: "",
+        videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
         description:
           "Connect to the beat, find your natural bounce, and build the grounded base that makes every move look intentional.",
         takeaways: [
@@ -20,7 +20,7 @@ const courseSections = [
         id: "hips-and-core",
         title: "Hips, core, and rhythm",
         duration: "11 min",
-        videoSrc: "",
+        videoSrc: "https://www.w3schools.com/html/movie.mp4",
         description:
           "Wake up your hips and core so you can add natural curves and texture without forcing it.",
         takeaways: [
@@ -39,7 +39,7 @@ const courseSections = [
         id: "loop-1",
         title: "A simple loop you can repeat all night",
         duration: "10 min",
-        videoSrc: "",
+        videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
         description:
           "Build a 4-count loop that you can repeat on any dance floor without ever feeling like you’re out of moves.",
         takeaways: [
@@ -52,7 +52,7 @@ const courseSections = [
         id: "loop-2",
         title: "Slow, sexy loop for R&B nights",
         duration: "8 min",
-        videoSrc: "",
+        videoSrc: "https://www.w3schools.com/html/movie.mp4",
         description:
           "Dial into a smoother, slower loop that fits R&B, Afrobeats, and anything with a sultry groove.",
         takeaways: [
@@ -71,7 +71,7 @@ const courseSections = [
         id: "follow-along-1",
         title: "Follow-along practice: living room session",
         duration: "15 min",
-        videoSrc: "",
+        videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
         description:
           "A no-pressure, follow-along session you can put on anytime to cement your new style into muscle memory.",
         takeaways: [

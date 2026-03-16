@@ -431,6 +431,54 @@ button {
   color: var(--text-muted);
 }
 
+.hero-coach-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video-frame {
+  width: 240px;
+  max-width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), rgba(5, 3, 9, 0.95));
+  padding: 10px 12px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.75);
+}
+
+.hero-video-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.hero-video-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.hero-video-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, #fff, var(--accent));
+  color: #050309;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.hero-video-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .pricing-price-row {
   display: flex;
   align-items: baseline;
@@ -558,12 +606,12 @@ button {
 }
 
 .lesson-meta h1 {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   margin: 0 0 6px;
 }
 
 .lesson-meta p {
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
 }
 
@@ -571,7 +619,7 @@ button {
   list-style: disc;
   padding-left: 1.1rem;
   margin: 8px 0 0;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
 }
 
@@ -806,6 +854,14 @@ button {
 
 .hidden {
   display: none !important;
+}
+
+.floating-cta {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 50;
+  padding-inline: 20px;
 }
 
 @media (max-width: 900px) {
