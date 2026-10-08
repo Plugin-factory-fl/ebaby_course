@@ -73,6 +73,7 @@ function initFloatingCta(page) {
     existing.remove();
   }
   const shouldShow = !hasActiveMembership() && (page === "home" || page === "course");
+  document.body.classList.toggle("has-floating-cta", shouldShow);
   if (!shouldShow) return;
 
   const btn = document.createElement("a");

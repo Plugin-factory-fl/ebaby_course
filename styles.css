@@ -124,7 +124,6 @@ button {
 
 .logo-mark {
   display: flex;
-  color: var(--gold);
   flex-shrink: 0;
 }
 
@@ -172,8 +171,8 @@ button {
 }
 
 .nav-link.is-active {
-  color: var(--ink-deep);
-  background-color: var(--gold);
+  color: var(--text-on-ink);
+  background-color: rgba(244, 239, 230, 0.16);
 }
 
 .nav-cta {
@@ -1061,6 +1060,14 @@ button {
   bottom: 16px;
   z-index: 50;
   padding-inline: 18px;
+}
+
+body.has-floating-cta {
+  padding-bottom: 76px;
+}
+
+body.has-floating-cta .site-footer {
+  padding-bottom: 88px;
 }
 
 @media (min-width: 640px) {
