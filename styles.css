@@ -360,6 +360,19 @@ button {
   margin: 0;
 }
 
+.section-title-center {
+  text-align: center;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.35;
+}
+
+.section-taught-by {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .section-subtitle {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -1126,6 +1139,11 @@ body.course-picker-open .floating-cta {
 
   .hero {
     padding-top: 40px;
+  }
+
+  .section-title-center {
+    font-size: 1.3rem;
+    padding: 0 8px;
   }
 
   .card-grid {
