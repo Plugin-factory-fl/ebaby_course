@@ -219,9 +219,12 @@ button {
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 4vw, 3.2rem);
-  letter-spacing: -0.04em;
+  font-size: clamp(1.4rem, 2.15vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.28;
   margin: 0 0 16px;
+  max-width: 18.5em;
 }
 
 .hero p {
@@ -1139,6 +1142,12 @@ body.course-picker-open .floating-cta {
 
   .hero {
     padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 1.32rem;
+    line-height: 1.32;
+    max-width: none;
   }
 
   .section-title-center {
