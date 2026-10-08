@@ -643,9 +643,51 @@ button {
   text-align: left;
 }
 
-.course-extra-card .btn {
-  align-self: flex-start;
-  margin-top: auto;
+.course-extra-card-booking {
+  text-align: center;
+  align-items: center;
+}
+
+.course-extra-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 10px;
+}
+
+.course-extra-heading .section-title {
+  flex: 1 1 12rem;
+}
+
+.free-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.course-book-btn-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 120px;
+}
+
+.course-book-btn {
+  width: min(100%, 280px);
+  padding: 16px 28px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  min-height: 56px;
 }
 
 .feedback-form {
