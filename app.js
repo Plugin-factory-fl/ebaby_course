@@ -6,6 +6,10 @@ const STRIPE_CHECKOUT_URL = "https://buy.stripe.com/REPLACE_ME";
 // Swap this for the live Calendly/Stripe booking link when it's ready.
 const BOOKING_URL = "https://REPLACE_ME_BOOKING_LINK";
 
+// Set this to a form service endpoint that accepts file uploads
+// (Formspree, Basin, etc.) and delivers to email.
+const FEEDBACK_FORM_ENDPOINT = "";
+
 function getUser() {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -61,6 +65,7 @@ function initNav() {
   initFloatingCta(page);
   initStripeCheckoutLinks();
   initBookingLinks();
+  initFeedbackForm();
 }
 
 function initStripeCheckoutLinks() {
@@ -72,6 +77,55 @@ function initStripeCheckoutLinks() {
 function initBookingLinks() {
   document.querySelectorAll("[data-booking-link]").forEach((el) => {
     el.setAttribute("href", BOOKING_URL);
+  });
+}
+
+function initFeedbackForm() {
+  const form = document.getElementById("feedback-form");
+  if (!form) return;
+
+  const fileInput = document.getElementById("feedback-video");
+  const fileName = document.getElementById("feedback-filename");
+  const status = document.getElementById("feedback-status");
+
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files && fileInput.files[0];
+    fileName.textContent = file ? file.name : "No video selected";
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const name = String(form.elements.name.value || "").trim();
+    const email = String(form.elements.email.value || "").trim();
+    const video = fileInput.files && fileInput.files[0];
+
+    if (!name || !email || !video) {
+      status.textContent = "Please add your name, email, and a video.";
+      status.className = "feedback-status is-error";
+      return;
+    }
+
+    if (!FEEDBACK_FORM_ENDPOINT) {
+      status.textContent = "Video uploads are coming soon.";
+      status.className = "feedback-status is-pending";
+      return;
+    }
+
+    try {
+      const body = new FormData(form);
+      const res = await fetch(FEEDBACK_FORM_ENDPOINT, {
+        method: "POST",
+        body,
+      });
+      if (!res.ok) throw new Error("submit failed");
+      status.textContent = "Thanks — your video was sent.";
+      status.className = "feedback-status is-success";
+      form.reset();
+      fileName.textContent = "No video selected";
+    } catch {
+      status.textContent = "Something went wrong. Please try again.";
+      status.className = "feedback-status is-error";
+    }
   });
 }
 

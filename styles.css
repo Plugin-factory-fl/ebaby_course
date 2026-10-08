@@ -627,6 +627,54 @@ button {
   padding-top: 8px;
 }
 
+.course-extra-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.course-extra-card {
+  max-width: none;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.course-extra-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  flex: 1;
+}
+
+.feedback-form .btn {
+  width: 100%;
+}
+
+.feedback-status {
+  min-height: 1.2em;
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.feedback-status.is-pending,
+.feedback-status.is-error {
+  color: var(--accent-strong);
+}
+
+.feedback-status.is-success {
+  color: var(--success);
+}
+
 .about-eyebrow {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -1273,7 +1321,8 @@ button {
   font-size: 0.85rem;
 }
 
-.field input {
+.field input,
+.field textarea {
   border-radius: 10px;
   border: 1px solid var(--border-subtle);
   background-color: var(--input-bg);
@@ -1282,9 +1331,12 @@ button {
   outline: none;
   font-size: 0.92rem;
   font-family: inherit;
+  width: 100%;
+  resize: vertical;
 }
 
-.field input:focus {
+.field input:focus,
+.field textarea:focus {
   border-color: var(--accent-strong);
   box-shadow: 0 0 0 1px rgba(255, 77, 166, 0.45);
 }
@@ -1597,7 +1649,8 @@ body.course-picker-open .floating-cta {
   }
 
   .card-grid,
-  .benefit-grid {
+  .benefit-grid,
+  .course-extra-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
