@@ -83,10 +83,37 @@
 
       <section class="section course-book-cta">
         <div class="container">
-          <div class="private-promo">
-            <h2 class="section-title">Want personal feedback from Erynn?</h2>
-            <p>Book a 1:1 live lesson — $500 / one hour.</p>
-            <a href="book.html" class="btn btn-primary">Book a call</a>
+          <div class="course-extra-grid">
+            <div class="private-promo course-extra-card">
+              <h2 class="section-title">Want personal feedback from Erynn?</h2>
+              <p>Book a 1:1 live lesson — $299 / one hour.</p>
+              <a href="book.html" class="btn btn-primary">Book a call</a>
+            </div>
+            <div class="private-promo course-extra-card">
+              <h2 class="section-title">Want feedback on your moves?</h2>
+              <p>Upload a video of your progress and Erynn Joi will send you personal feedback by email.</p>
+              <form id="feedback-form" class="feedback-form" novalidate>
+                <div class="field">
+                  <label for="feedback-name">Name</label>
+                  <input id="feedback-name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="feedback-email">Email</label>
+                  <input id="feedback-email" name="email" type="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                  <label for="feedback-video">Video</label>
+                  <input id="feedback-video" name="video" type="file" accept="video/*" required />
+                  <p class="helper-text" id="feedback-filename">No video selected</p>
+                </div>
+                <div class="field">
+                  <label for="feedback-note">Note <span class="helper-text">(optional)</span></label>
+                  <textarea id="feedback-note" name="note" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send for feedback</button>
+                <p class="feedback-status" id="feedback-status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
