@@ -259,9 +259,21 @@ button {
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.hero-intro-video {
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -275,7 +287,7 @@ button {
   letter-spacing: -0.04em;
   line-height: 1.16;
   margin: 0 0 16px;
-  max-width: 15.5em;
+  max-width: 16em;
 }
 
 .hero p {
@@ -283,11 +295,13 @@ button {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.6;
+  margin: 0 auto;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 24px;
 }
@@ -1511,10 +1525,6 @@ body.course-picker-open .floating-cta {
 }
 
 @media (max-width: 900px) {
-  .hero .container {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .hero-card-inner {
     grid-template-columns: minmax(0, 1fr);
   }
