@@ -1,6 +1,6 @@
 # Smooth Moves site
 
-Static marketing and course experience for the Smooth Moves membership (formerly Sexy Moves by Ebaby). This version runs entirely in the browser using HTML/CSS/JS and `localStorage` to simulate accounts and memberships.
+Static marketing and course experience for the Smooth Moves membership. This version runs entirely in the browser using HTML/CSS/JS and `localStorage` to simulate accounts and memberships.
 
 ## Pages
 
@@ -40,7 +40,7 @@ All links in the project are relative, so the site will work at that path.
 
 ## How the mock membership works
 
-- Account and membership data is stored in `localStorage` with the key `ebaby_user` (unchanged so existing local demo accounts keep working).
+- Account and membership data is stored in `localStorage` with the key `ebaby_user`.
 - Creating an account in `account.html` sets `hasActiveMembership: true` and unlocks the course page.
 - The course page checks this flag and either:
   - Shows a “Course locked” card for non-members, or

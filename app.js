@@ -33,7 +33,6 @@ function initNav() {
     const name = link.getAttribute("data-nav");
     if (name === page) {
       link.classList.add("is-active");
-      link.setAttribute("aria-current", "page");
     }
   });
   const yearEl = document.getElementById("year");
@@ -73,7 +72,6 @@ function initFloatingCta(page) {
     existing.remove();
   }
   const shouldShow = !hasActiveMembership() && (page === "home" || page === "course");
-  document.body.classList.toggle("has-floating-cta", shouldShow);
   if (!shouldShow) return;
 
   const btn = document.createElement("a");

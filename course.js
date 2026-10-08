@@ -25,7 +25,7 @@ const courseSections = [
           "Wake up your hips and core so you can add natural curves and texture without forcing it.",
         takeaways: [
           "Explore small, controlled hip motions that still read clearly.",
-          "Use your core to support sexy movement without strain.",
+          "Use your core to support fluid movement without strain.",
           "Practice slow drills that make fast music feel easier later.",
         ],
       },

@@ -62,7 +62,6 @@ function renderAccount() {
     if (start && document.getElementById("name")) {
       document.getElementById("name").focus();
     }
-    if (typeof initNav === "function") initNav();
     return;
   }
 
@@ -86,7 +85,6 @@ function renderAccount() {
         <button type="button" id="logout" class="btn btn-ghost">Log out</button>
       </div>
     `;
-    if (typeof initNav === "function") initNav();
     attachCommonHandlers();
     const activate = document.getElementById("activate-membership");
     if (activate) {
@@ -123,7 +121,6 @@ function renderAccount() {
     </div>
   `;
 
-  if (typeof initNav === "function") initNav();
   attachCommonHandlers(true);
 }
 
@@ -167,7 +164,6 @@ function renderLogin() {
   if (showSignup) {
     showSignup.addEventListener("click", () => renderAccount());
   }
-  if (typeof initNav === "function") initNav();
 }
 
 function attachCommonHandlers(includeCancel) {
