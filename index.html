@@ -26,6 +26,12 @@
       content="Learn club-ready grooves from pro dancer Erynn Joi (Ebaby) in simple, repeatable drills you can practice at home—no experience needed."
     />
     <meta name="twitter:image" content="https://plugin-factory-fl.github.io/ebaby_course/assets/lifestyle1.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="home">
@@ -39,6 +45,7 @@
           <a href="index.html" class="nav-link" data-nav="home">Home</a>
           <a href="course.html" class="nav-link" data-nav="course">Course</a>
           <a href="about.html" class="nav-link" data-nav="about">About</a>
+          <a href="book.html" class="nav-link" data-nav="book">Book a Call</a>
           <a href="account.html" class="nav-link" data-nav="account">Account</a>
           <a href="account.html?start=1" class="btn btn-primary nav-cta">Enroll now</a>
         </nav>
@@ -52,6 +59,12 @@
     <main>
       <section class="hero">
         <div class="container">
+          <div class="hero-intro-video">
+            <p class="hero-video-kicker">Introductory Video</p>
+            <div class="hero-coach-video">
+              <img src="assets/Introductory_placeholder1.png" alt="Introductory video placeholder" class="intro-placeholder-img" />
+            </div>
+          </div>
           <div>
             <div class="hero-tagline">
               <span class="pill-dot"></span>
@@ -65,21 +78,50 @@
               <a href="account.html?start=1" class="btn btn-primary">Enroll now</a>
             </div>
           </div>
-          <div class="hero-lifestyle">
-            <img src="assets/lifestyle1.jpg" alt="Person dancing with confidence at home" />
+        </div>
+      </section>
+
+      <section class="section instagram-section" data-instagram-section aria-label="Instagram videos from Erynn Joi">
+        <div class="container">
+          <div class="instagram-header">
+            <div>
+              <p class="about-eyebrow">On Instagram</p>
+              <h2 class="section-title">Watch Erynn move</h2>
+              <p class="section-subtitle">Fresh grooves from @ebabyofficial.</p>
+            </div>
+            <a
+              class="instagram-follow"
+              href="https://www.instagram.com/ebabyofficial/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              Follow @ebabyofficial
+            </a>
           </div>
+          <div class="instagram-carousel-wrap">
+            <button type="button" class="instagram-nav instagram-nav-prev" data-instagram-prev aria-label="Previous video">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div class="instagram-track" data-instagram-track></div>
+            <button type="button" class="instagram-nav instagram-nav-next" data-instagram-next aria-label="Next video">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+          <div class="instagram-dots" data-instagram-dots></div>
         </div>
       </section>
 
       <section class="section">
         <div class="container two-column">
           <div>
-            <div class="section-heading">
-              <h2 class="section-title">Introductory Video</h2>
-            </div>
-            <div class="hero-coach-video">
-              <img src="assets/Introductory_placeholder1.png" alt="Introductory video placeholder" class="intro-placeholder-img" />
-            </div>
+            <img src="assets/lifestyle1.jpg" alt="Person dancing with confidence at home" class="coach-side-photo" />
           </div>
           <div>
             <div class="about-card">
@@ -98,6 +140,110 @@
                 <a href="about.html" class="btn btn-secondary about-more-btn">Find out more about Erynn</a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="pricing-card">
+            <div class="pricing-price-row">
+              <div class="pricing-amount">$59.99</div>
+              <div class="pricing-period">/ month</div>
+            </div>
+            <p class="pricing-note">
+              One simple membership for an ever-growing Smooth Moves library.
+            </p>
+            <ul class="pricing-list">
+              <li>
+                <span class="check-dot"></span>
+                <span>Full access to all current and future lessons while you’re subscribed.</span>
+              </li>
+              <li>
+                <span class="check-dot"></span>
+                <span>New content every 1–2 months aimed at building real confidence, not just tricks.</span>
+              </li>
+              <li>
+                <span class="check-dot"></span>
+                <span>Beginner-friendly progress path that still challenges you as you grow.</span>
+              </li>
+              <li>
+                <span class="check-dot"></span>
+                <span>Train at home, then walk into any club already knowing what to do.</span>
+              </li>
+            </ul>
+            <a href="account.html?start=1" class="btn btn-primary" style="width: 100%; margin-top: 4px;">Enroll now</a>
+            <p class="helper-text" style="margin-top: 8px;">
+              In this first version, payment and access are simulated inside your browser so you can experience the full flow.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="section-title">Why buy this course</h2>
+          </div>
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="8" r="3.2" />
+                  <path d="M5.5 19.2c.8-3.2 3.2-5 6.5-5s5.7 1.8 6.5 5" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Beginner friendly</h3>
+              <p class="feature-body">No experience needed. Start simple even if you’ve never taken a dance class.</p>
+            </article>
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 10h16v9H4z" />
+                  <path d="M8 10V8a4 4 0 0 1 8 0v2" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Practice at home</h3>
+              <p class="feature-body">Filmed for small spaces. You don’t need a studio—just a few feet of room to move.</p>
+            </article>
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 7h14M5 12h14M5 17h9" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Simple, repeatable drills</h3>
+              <p class="feature-body">Club-ready grooves taught as drills you can practice anytime, then pause, rewind, and repeat.</p>
+            </article>
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="4" y="5" width="16" height="15" rx="2" />
+                  <path d="M8 3v4M16 3v4M4 10h16" />
+                </svg>
+              </div>
+              <h3 class="feature-title">New training every 1–2 months</h3>
+              <p class="feature-body">New combos, drills, and guidance as the library grows, so your style keeps evolving.</p>
+            </article>
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="8" />
+                  <path d="M12 8v4l3 2" />
+                </svg>
+              </div>
+              <h3 class="feature-title">One simple membership</h3>
+              <p class="feature-body">$59.99/month unlocks the full library. No tiers and no upsells.</p>
+            </article>
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 4l2.1 5.2L20 10l-4.4 3.5L16.8 19 12 15.8 7.2 19l1.2-5.5L4 10l5.9-.8z" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Taught by Erynn Joi</h3>
+              <p class="feature-body">25+ years as a professional dancer, choreographer, and movement coach—built to grow your confidence.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -166,38 +312,21 @@
 
       <section class="section">
         <div class="container">
-          <div class="pricing-card">
-            <div class="pricing-price-row">
-              <div class="pricing-amount">$59.99</div>
-              <div class="pricing-period">/ month</div>
-            </div>
-            <p class="pricing-note">
-              One simple membership for an ever-growing Smooth Moves library.
+          <div class="private-promo">
+            <p class="about-eyebrow">Private lessons</p>
+            <h2 class="section-title">Train 1:1 with Erynn</h2>
+            <p>
+              Book a private one-hour live video lesson with Erynn Joi—personalized feedback on your movement, tailored to you.
             </p>
-            <ul class="pricing-list">
-              <li>
-                <span class="check-dot"></span>
-                <span>Full access to all current and future lessons while you’re subscribed.</span>
-              </li>
-              <li>
-                <span class="check-dot"></span>
-                <span>New content every 1–2 months aimed at building real confidence, not just tricks.</span>
-              </li>
-              <li>
-                <span class="check-dot"></span>
-                <span>Beginner-friendly progress path that still challenges you as you grow.</span>
-              </li>
-              <li>
-                <span class="check-dot"></span>
-                <span>Train at home, then walk into any club already knowing what to do.</span>
-              </li>
-            </ul>
-            <a href="account.html?start=1" class="btn btn-primary" style="width: 100%; margin-top: 4px;">Enroll now</a>
-            <p class="helper-text" style="margin-top: 8px;">
-              In this first version, payment and access are simulated inside your browser so you can experience the full flow.
-            </p>
+            <p class="private-promo-price">$500 for a one-hour live lesson</p>
+            <a href="book.html" class="btn btn-primary">Book a call</a>
           </div>
-          <div class="faq-card" style="margin-top: 20px;">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="faq-card">
             <div class="pill">
               <span class="pill-dot"></span>
               Common questions
@@ -242,6 +371,7 @@
           <a href="index.html">Home</a>
           <a href="course.html">Course</a>
           <a href="about.html">About</a>
+          <a href="book.html">Book a Call</a>
           <a href="account.html">Account</a>
         </div>
       </div>
