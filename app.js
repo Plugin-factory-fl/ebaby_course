@@ -1,5 +1,8 @@
 const STORAGE_KEY = "ebaby_user";
 
+// Swap this for the live Stripe Payment Link when it's ready.
+const STRIPE_CHECKOUT_URL = "https://buy.stripe.com/REPLACE_ME";
+
 function getUser() {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -33,6 +36,9 @@ function initNav() {
     const name = link.getAttribute("data-nav");
     if (name === page) {
       link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
     }
   });
   const yearEl = document.getElementById("year");
@@ -50,6 +56,13 @@ function initNav() {
   }
 
   initFloatingCta(page);
+  initStripeCheckoutLinks();
+}
+
+function initStripeCheckoutLinks() {
+  document.querySelectorAll("[data-stripe-checkout]").forEach((el) => {
+    el.setAttribute("href", STRIPE_CHECKOUT_URL);
+  });
 }
 
 function protectCoursePage() {
