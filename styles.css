@@ -639,6 +639,12 @@ button {
   border: 1px solid var(--border-subtle);
 }
 
+.hero-intro-video .intro-placeholder-img {
+  max-height: none;
+  aspect-ratio: 16 / 10;
+  height: auto;
+}
+
 .hero-video-kicker {
   font-family: var(--font-display);
   font-size: 0.78rem;
@@ -1391,7 +1397,8 @@ body.course-picker-open .floating-cta {
   }
 
   .hero {
-    padding-top: 40px;
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
 
   .hero h1 {
