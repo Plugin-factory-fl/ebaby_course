@@ -35,7 +35,7 @@ function renderAccount() {
         <p class="helper-text">
           Membership is <strong>$59.99/month</strong>. In this first version, access is simulated locally so you can preview the experience.
         </p>
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 4px;">Create account &amp; start membership</button>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 4px;">Enroll now</button>
       </form>
       <div class="spacer"></div>
       <p class="muted-link">
@@ -80,7 +80,7 @@ function renderAccount() {
             Inactive
           </span>
         </div>
-        <button type="button" id="activate-membership" class="btn btn-primary">Start membership</button>
+        <button type="button" id="activate-membership" class="btn btn-primary">Enroll now</button>
         <button type="button" id="go-course" class="btn btn-secondary">Go to course</button>
         <button type="button" id="logout" class="btn btn-ghost">Log out</button>
       </div>
