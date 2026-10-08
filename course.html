@@ -28,6 +28,14 @@
     </header>
 
     <main class="course-layout">
+      <div id="course-idle" class="course-locked hidden">
+        <div class="course-locked-card">
+          <h1>Choose a course</h1>
+          <p>Pick which Smooth Moves course you’d like to open.</p>
+          <button type="button" id="reopen-course-picker" class="btn btn-primary">Select a course</button>
+        </div>
+      </div>
+
       <div id="course-locked" class="course-locked hidden">
         <div class="course-locked-card">
           <h1>Course locked</h1>
@@ -51,7 +59,7 @@
             </video>
           </div>
           <div class="lesson-meta">
-            <h1 id="lesson-title"></h1>
+            <h1 id="lesson-title" tabindex="-1"></h1>
             <p id="lesson-description"></p>
             <ul id="lesson-takeaways" class="lesson-takeaways"></ul>
           </div>
@@ -75,6 +83,42 @@
         </div>
       </div>
     </footer>
+
+    <div id="course-picker" class="course-picker hidden">
+      <div class="course-picker-backdrop" data-picker-dismiss></div>
+      <div
+        class="course-picker-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="course-picker-title"
+        aria-describedby="course-picker-desc"
+      >
+        <button type="button" class="course-picker-close" data-picker-dismiss aria-label="Close course selection">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 id="course-picker-title">Choose a course</h2>
+        <p id="course-picker-desc" class="helper-text">Select a course, then view it. Membership is still required to unlock lessons.</p>
+        <div class="course-option-list">
+          <div role="radiogroup" aria-labelledby="course-picker-title">
+            <label class="course-option">
+              <input type="radio" name="course-choice" value="basic" />
+              <span class="course-option-radio" aria-hidden="true"></span>
+              <span class="course-option-copy">
+                <span class="course-option-title">Smooth Moves Basic</span>
+              </span>
+            </label>
+          </div>
+          <div class="course-option is-disabled" aria-disabled="true">
+            <span class="course-option-radio" aria-hidden="true"></span>
+            <span class="course-option-copy">
+              <span class="course-option-title">Smooth Moves with your Husband</span>
+              <span class="course-option-sub">Coming soon</span>
+            </span>
+          </div>
+        </div>
+        <button type="button" id="view-course-btn" class="btn btn-primary" disabled>View Course</button>
+      </div>
+    </div>
 
     <script src="app.js"></script>
     <script src="course.js"></script>
