@@ -3,14 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sexy Moves by Ebaby – Course</title>
+    <title>Smooth Moves – Course</title>
+    <meta name="description" content="Unlock the Smooth Moves lesson library and train at home with Erynn Joi (Ebaby)." />
+    <meta name="theme-color" content="#0E3D3A" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Smooth Moves" />
+    <meta property="og:title" content="Smooth Moves – Course" />
+    <meta property="og:description" content="Unlock the Smooth Moves lesson library and train at home with Erynn Joi (Ebaby)." />
+    <meta property="og:image" content="https://plugin-factory-fl.github.io/ebaby_course/assets/lifestyle1.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,520;1,9..144,650&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="course">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a href="index.html" class="logo">Sexy Moves by Ebaby</a>
-        <nav class="main-nav">
+        <a href="index.html" class="logo" aria-label="Smooth Moves home">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="28" height="28">
+              <rect width="32" height="32" rx="9" fill="currentColor" />
+              <path d="M7 13c3.2-2.4 6.2-2.6 9 0 2.8 2.6 5.8 2.6 9 0" fill="none" stroke="#F4EFE6" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M7 20c3.2-2.4 6.2-2.6 9 0 2.8 2.6 5.8 2.6 9 0" fill="none" stroke="#D4A574" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="logo-wordmark">
+            <span class="logo-smooth">Smooth</span>
+            <span class="logo-moves">Moves</span>
+          </span>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
           <a href="index.html" class="nav-link" data-nav="home">Home</a>
           <a href="course.html" class="nav-link" data-nav="course">Course</a>
           <a href="account.html" class="nav-link" data-nav="account">Account</a>
@@ -19,12 +46,12 @@
       </div>
     </header>
 
-    <main class="course-layout">
+    <main id="main" class="course-layout">
       <div id="course-locked" class="course-locked hidden">
         <div class="course-locked-card">
           <h1>Course locked</h1>
             <p>
-              Sexy Moves by Ebaby is available to active members only. Create your account and start your membership to unlock all lessons.
+              Smooth Moves is available to active members only. Create your account and start your membership to unlock all lessons.
             </p>
           <a href="account.html?start=1" class="btn btn-primary">Start your membership</a>
           <a href="index.html" class="btn btn-secondary">Learn more on the home page</a>
@@ -58,7 +85,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-left">
-          <span>&copy; <span id="year"></span> Sexy Moves by Ebaby</span>
+          <span>&copy; <span id="year"></span> Smooth Moves</span>
         </div>
         <div class="footer-right">
           <a href="index.html">Home</a>
@@ -72,4 +99,3 @@
     <script src="course.js"></script>
   </body>
 </html>
-

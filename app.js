@@ -33,6 +33,7 @@ function initNav() {
     const name = link.getAttribute("data-nav");
     if (name === page) {
       link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
     }
   });
   const yearEl = document.getElementById("year");
