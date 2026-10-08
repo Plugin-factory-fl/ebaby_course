@@ -1,15 +1,20 @@
 :root {
-  --bg: #050309;
-  --bg-elevated: #100b1a;
+  --bg: #fff4f8;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
   --accent: #ff4da6;
-  --accent-soft: rgba(255, 77, 166, 0.12);
-  --accent-strong: #ff85c2;
-  --text-primary: #ffffff;
-  --text-muted: #b0a7c4;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --danger: #ff4d6a;
-  --success: #32d46b;
-  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.75);
+  --accent-soft: rgba(255, 77, 166, 0.14);
+  --accent-strong: #e0127a;
+  --text-primary: #1c1018;
+  --text-muted: #6d5563;
+  --border-subtle: rgba(28, 16, 24, 0.1);
+  --danger: #d01746;
+  --success: #1a8f48;
+  --shadow-soft: 0 18px 48px rgba(255, 77, 166, 0.14);
+  --overlay: rgba(28, 16, 24, 0.4);
+  --input-bg: #fffafc;
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
   --radius-lg: 18px;
   --radius-md: 12px;
   --radius-sm: 999px;
@@ -23,6 +28,11 @@
   box-sizing: border-box;
 }
 
+html {
+  color-scheme: light;
+  background-color: var(--bg);
+}
+
 html,
 body {
   margin: 0;
@@ -31,10 +41,22 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  background: radial-gradient(circle at top left, #22092e 0, #050309 45%, #020106 100%);
+  font-family: var(--font-body);
+  background: radial-gradient(circle at top left, #ffe4f1 0, var(--bg) 42%, #fff8fb 100%);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.section-title,
+.logo-mark,
+.pricing-amount,
+.about-page-title,
+.about-title,
+.feature-title {
+  font-family: var(--font-display);
 }
 
 a {
@@ -63,8 +85,8 @@ button {
   top: 0;
   z-index: 40;
   backdrop-filter: blur(18px);
-  background: linear-gradient(to bottom, rgba(5, 3, 9, 0.96), rgba(5, 3, 9, 0.8), transparent);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(to bottom, rgba(255, 244, 248, 0.96), rgba(255, 244, 248, 0.82), transparent);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .header-inner {
@@ -86,9 +108,11 @@ button {
   line-height: 1.1;
   padding: 8px 18px 9px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), rgba(16, 11, 26, 0.9));
+  border: 1px solid rgba(255, 77, 166, 0.28);
+  background: var(--bg-elevated);
+  box-shadow: 0 8px 24px rgba(255, 77, 166, 0.12);
   flex-shrink: 0;
+  color: var(--text-primary);
 }
 
 .logo-mark {
@@ -121,13 +145,13 @@ button {
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: var(--accent-soft);
   color: var(--text-primary);
 }
 
 .nav-link.is-active {
-  color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--accent-strong);
+  background-color: var(--accent-soft);
 }
 
 .nav-cta {
@@ -142,8 +166,9 @@ button {
   padding: 10px 18px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
@@ -151,23 +176,24 @@ button {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #080310;
-  box-shadow: 0 18px 45px rgba(255, 77, 166, 0.45);
+  color: #2a0818;
+  box-shadow: 0 12px 28px rgba(255, 77, 166, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px) translateZ(0);
-  box-shadow: 0 24px 65px rgba(255, 77, 166, 0.55);
+  box-shadow: 0 16px 36px rgba(255, 77, 166, 0.42);
 }
 
 .btn-secondary {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.16);
+  background-color: var(--bg-elevated);
+  border-color: rgba(28, 16, 24, 0.18);
   color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--accent-soft);
+  border-color: var(--accent);
 }
 
 .btn-ghost {
@@ -181,9 +207,9 @@ button {
 }
 
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border-subtle);
   padding: 18px 0 26px;
-  background: radial-gradient(circle at top, rgba(139, 92, 246, 0.16), transparent 55%);
+  background: radial-gradient(circle at top, rgba(255, 77, 166, 0.1), transparent 55%);
   margin-top: 40px;
 }
 
@@ -217,7 +243,7 @@ button {
 
 .top-banner {
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .top-banner img {
@@ -234,7 +260,7 @@ button {
 
 .hero .container {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 48px;
   align-items: center;
 }
@@ -272,12 +298,12 @@ button {
   gap: 8px;
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 77, 166, 0.22);
+  background-color: var(--accent-soft);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-muted);
+  color: var(--accent-strong);
   margin-bottom: 14px;
 }
 
@@ -290,8 +316,8 @@ button {
 
 .hero-card {
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.1), rgba(5, 3, 9, 0.95));
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
   padding: 18px 18px 18px 20px;
   box-shadow: var(--shadow-soft);
   position: relative;
@@ -337,8 +363,8 @@ button {
 
 .chip {
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background-color: rgba(0, 0, 0, 0.36);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--accent-soft);
   padding: 3px 9px;
   font-size: 0.75rem;
   color: var(--text-primary);
@@ -435,7 +461,7 @@ button {
   border-radius: var(--radius-lg);
   object-fit: cover;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
 }
 
 .about-photo-wide {
@@ -449,7 +475,7 @@ button {
   text-align: center;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.9);
+  background-color: var(--bg-card);
   padding: 28px 24px 24px;
   box-shadow: var(--shadow-soft);
 }
@@ -498,7 +524,7 @@ button {
 .feature-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.9);
+  background-color: var(--bg-card);
   padding: 16px 16px 18px;
 }
 
@@ -507,6 +533,8 @@ button {
   height: 30px;
   border-radius: 999px;
   background-color: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -536,15 +564,21 @@ button {
 .faq-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.9);
+  background-color: var(--bg-card);
   padding: 18px 18px 20px;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.65);
+  box-shadow: var(--shadow-soft);
 }
 
 .pricing-card {
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
+}
+
+.faq-card {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-eyebrow {
@@ -570,9 +604,9 @@ button {
   width: 80px;
   height: 80px;
   border-radius: 999px;
-  background: radial-gradient(circle at top, #ffb3dd, #5b1640);
-  border: 3px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+  background: radial-gradient(circle at top, #ffb3dd, #ff4da6);
+  border: 3px solid #fff;
+  box-shadow: 0 12px 28px rgba(255, 77, 166, 0.28);
 }
 
 .coach-avatar {
@@ -580,8 +614,8 @@ button {
   height: 96px;
   border-radius: 999px;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+  border: 3px solid #fff;
+  box-shadow: 0 12px 28px rgba(255, 77, 166, 0.28);
 }
 
 .about-meta {
@@ -598,20 +632,116 @@ button {
 
 .intro-placeholder-img {
   width: 100%;
-  max-height: 360px;
+  max-height: 420px;
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+}
+
+.hero-video-kicker {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-strong);
+  margin: 0 0 10px;
+}
+
+.coach-side-photo {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  max-height: 420px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.instagram-tile {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.instagram-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instagram-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.15rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(to top, rgba(28, 16, 24, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.instagram-tile-label {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  z-index: 1;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.benefit-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-card);
+  padding: 18px 16px 18px;
+  box-shadow: var(--shadow-soft);
+}
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: var(--accent-soft);
+  color: var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.benefit-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .hero-video-frame {
   width: 240px;
   max-width: 100%;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), rgba(5, 3, 9, 0.95));
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
   padding: 10px 12px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.75);
+  box-shadow: var(--shadow-soft);
 }
 
 .hero-video-label {
@@ -699,20 +829,20 @@ button {
   gap: 6px;
   padding: 5px 10px;
   border-radius: 999px;
-  background-color: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: var(--accent-soft);
+  border: 1px solid rgba(255, 77, 166, 0.22);
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--accent-strong);
 }
 
 .faq-list {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border-subtle);
   margin-top: 10px;
 }
 
 .faq-item {
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .faq-question {
@@ -740,7 +870,7 @@ button {
 .course-sidebar {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.96);
+  background-color: var(--bg-card);
   padding: 10px 12px 12px;
   overflow-y: auto;
 }
@@ -748,7 +878,7 @@ button {
 .course-main {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.96);
+  background-color: var(--bg-card);
   padding: 10px 12px 12px;
   display: flex;
   flex-direction: column;
@@ -757,8 +887,8 @@ button {
 .course-video-wrapper {
   border-radius: var(--radius-md);
   overflow: hidden;
-  background-color: #000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1c1018;
+  border: 1px solid var(--border-subtle);
 }
 
 .lesson-video {
@@ -837,14 +967,14 @@ button {
 }
 
 .lesson-button:hover {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--accent-soft);
   color: var(--text-primary);
 }
 
 .lesson-button.is-active {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.14);
-  color: var(--text-primary);
+  background-color: var(--accent-soft);
+  border-color: rgba(255, 77, 166, 0.35);
+  color: var(--accent-strong);
 }
 
 .lesson-label {
@@ -860,7 +990,7 @@ button {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.14);
+  background-color: rgba(28, 16, 24, 0.16);
 }
 
 .lesson-progress-dot.is-complete {
@@ -879,7 +1009,7 @@ button {
   width: 100%;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.96);
+  background-color: var(--bg-card);
   padding: 22px 20px 20px;
   text-align: center;
   box-shadow: var(--shadow-soft);
@@ -908,7 +1038,7 @@ button {
   max-width: 440px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(5, 3, 9, 0.96);
+  background-color: var(--bg-card);
   padding: 24px 22px 22px;
   box-shadow: var(--shadow-soft);
 }
@@ -942,12 +1072,13 @@ button {
 
 .field input {
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background-color: rgba(2, 1, 6, 0.98);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--input-bg);
   padding: 9px 10px;
   color: var(--text-primary);
   outline: none;
   font-size: 0.92rem;
+  font-family: inherit;
 }
 
 .field input:focus {
@@ -1043,7 +1174,7 @@ button {
 .course-picker-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(5, 3, 9, 0.78);
+  background: var(--overlay);
   backdrop-filter: blur(12px);
 }
 
@@ -1054,7 +1185,7 @@ button {
   max-width: 440px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background-color: rgba(16, 11, 26, 0.98);
+  background-color: var(--bg-card);
   padding: 24px 22px 22px;
   box-shadow: var(--shadow-soft);
 }
@@ -1072,7 +1203,7 @@ button {
   height: 36px;
   border: none;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--accent-soft);
   color: var(--text-primary);
   font-size: 1.5rem;
   line-height: 1;
@@ -1080,7 +1211,7 @@ button {
 }
 
 .course-picker-close:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 77, 166, 0.22);
 }
 
 .course-option-list {
@@ -1102,8 +1233,8 @@ button {
   gap: 12px;
   padding: 14px 14px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background-color: rgba(5, 3, 9, 0.55);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--input-bg);
   cursor: pointer;
   position: relative;
 }
@@ -1122,7 +1253,7 @@ button {
   margin-top: 2px;
   flex-shrink: 0;
   border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(28, 16, 24, 0.28);
   background: transparent;
 }
 
@@ -1203,8 +1334,13 @@ body.course-picker-open .floating-cta {
     text-align: left;
   }
 
-  .card-grid {
+  .card-grid,
+  .benefit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .two-column {
@@ -1264,8 +1400,13 @@ body.course-picker-open .floating-cta {
     max-width: none;
   }
 
-  .card-grid {
+  .card-grid,
+  .benefit-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .section-heading {
