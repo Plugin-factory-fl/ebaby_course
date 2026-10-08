@@ -78,7 +78,7 @@ function initFloatingCta(page) {
   btn.id = "floating-membership-cta";
   btn.href = "account.html?start=1";
   btn.className = "btn btn-primary floating-cta";
-  btn.textContent = "Start your membership";
+  btn.textContent = "Enroll now";
   document.body.appendChild(btn);
 }
 

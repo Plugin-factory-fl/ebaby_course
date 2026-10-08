@@ -76,13 +76,15 @@ button {
 
 .logo {
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  padding: 6px 12px;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  padding: 10px 18px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), rgba(16, 11, 26, 0.9));
+  flex-shrink: 0;
 }
 
 .main-nav {
@@ -217,9 +219,12 @@ button {
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 4vw, 3.2rem);
-  letter-spacing: -0.04em;
+  font-size: clamp(1.4rem, 2.15vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.28;
   margin: 0 0 16px;
+  max-width: 18.5em;
 }
 
 .hero p {
@@ -356,6 +361,19 @@ button {
   font-size: 1.45rem;
   letter-spacing: -0.02em;
   margin: 0;
+}
+
+.section-title-center {
+  text-align: center;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.35;
+}
+
+.section-taught-by {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .section-subtitle {
@@ -898,6 +916,165 @@ button {
   display: none !important;
 }
 
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.course-picker {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.course-picker-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 3, 9, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.course-picker-dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: rgba(16, 11, 26, 0.98);
+  padding: 24px 22px 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.course-picker-dialog h2 {
+  margin: 0 40px 6px 0;
+  font-size: 1.4rem;
+}
+
+.course-picker-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.course-picker-close:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.course-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0 18px;
+}
+
+.course-option-list [role="radiogroup"] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background-color: rgba(5, 3, 9, 0.55);
+  cursor: pointer;
+  position: relative;
+}
+
+.course-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.course-option-radio {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+}
+
+.course-option:hover:not(.is-disabled) {
+  border-color: rgba(255, 133, 194, 0.45);
+  background-color: var(--accent-soft);
+}
+
+.course-option:has(input:checked) {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+  box-shadow: 0 0 0 1px rgba(255, 77, 166, 0.35);
+}
+
+.course-option:has(input:checked) .course-option-radio {
+  border-color: var(--accent);
+  background: radial-gradient(circle at center, var(--accent) 0 5px, transparent 6px);
+}
+
+.course-option:has(input:focus-visible) {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.course-option-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.course-option-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.course-option-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.course-option.is-disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  filter: grayscale(0.25);
+}
+
+.course-picker-dialog .btn {
+  width: 100%;
+}
+
+body.course-picker-open {
+  overflow: hidden;
+}
+
+body.course-picker-open .floating-cta {
+  display: none !important;
+}
+
 .floating-cta {
   position: fixed;
   right: 20px;
@@ -938,6 +1115,14 @@ button {
   }
 }
 
+@media (min-width: 641px) {
+  .logo {
+    font-size: 1.28rem;
+    padding: 12px 22px;
+    letter-spacing: 0.12em;
+  }
+}
+
 @media (max-width: 640px) {
   .header-inner {
     flex-direction: column;
@@ -957,6 +1142,17 @@ button {
 
   .hero {
     padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 1.32rem;
+    line-height: 1.32;
+    max-width: none;
+  }
+
+  .section-title-center {
+    font-size: 1.3rem;
+    padding: 0 8px;
   }
 
   .card-grid {

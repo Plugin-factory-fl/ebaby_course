@@ -25,7 +25,7 @@ const courseSections = [
           "Wake up your hips and core so you can add natural curves and texture without forcing it.",
         takeaways: [
           "Explore small, controlled hip motions that still read clearly.",
-          "Use your core to support sexy movement without strain.",
+          "Use your core to support fluid movement without strain.",
           "Practice slow drills that make fast music feel easier later.",
         ],
       },
@@ -184,22 +184,144 @@ function goToNextLesson() {
   }
 }
 
-function initCoursePage() {
+let lessonNavBound = false;
+let pickerPreviousFocus = null;
+
+function getPickerFocusable(dialog) {
+  return Array.from(
+    dialog.querySelectorAll(
+      'button:not([disabled]), [href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )
+  ).filter((el) => !el.hasAttribute("disabled") && el.getAttribute("aria-hidden") !== "true");
+}
+
+function setPageInert(inert) {
+  ["header", "main", "footer"].forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    if (inert) {
+      el.setAttribute("inert", "");
+      el.setAttribute("aria-hidden", "true");
+    } else {
+      el.removeAttribute("inert");
+      el.removeAttribute("aria-hidden");
+    }
+  });
+}
+
+function openCoursePicker() {
+  const picker = document.getElementById("course-picker");
+  const dialog = picker && picker.querySelector(".course-picker-dialog");
+  const idle = document.getElementById("course-idle");
+  const locked = document.getElementById("course-locked");
+  const content = document.getElementById("course-content");
+  const viewBtn = document.getElementById("view-course-btn");
+  if (!picker || !dialog) return;
+
+  pickerPreviousFocus = document.activeElement;
+  if (idle) idle.classList.add("hidden");
+  if (locked) locked.classList.add("hidden");
+  if (content) content.classList.add("hidden");
+  picker.classList.remove("hidden");
+  document.body.classList.add("course-picker-open");
+  setPageInert(true);
+
+  const selected = dialog.querySelector('input[name="course-choice"]:checked');
+  if (viewBtn) viewBtn.disabled = !selected;
+  const focusTarget = dialog.querySelector('input[name="course-choice"]:not([disabled])') || dialog.querySelector(".course-picker-close");
+  window.setTimeout(() => {
+    if (focusTarget) focusTarget.focus();
+  }, 0);
+}
+
+function closeCoursePicker({ restoreIdle = true } = {}) {
+  const picker = document.getElementById("course-picker");
+  const idle = document.getElementById("course-idle");
+  if (!picker) return;
+  picker.classList.add("hidden");
+  document.body.classList.remove("course-picker-open");
+  setPageInert(false);
+  if (restoreIdle && idle) {
+    idle.classList.remove("hidden");
+    const reopen = document.getElementById("reopen-course-picker");
+    if (reopen) reopen.focus();
+    else if (pickerPreviousFocus && typeof pickerPreviousFocus.focus === "function") pickerPreviousFocus.focus();
+  }
+}
+
+function openSelectedCourse() {
+  const selected = document.querySelector('input[name="course-choice"]:checked');
+  if (!selected || selected.value !== "basic") return;
+
+  closeCoursePicker({ restoreIdle: false });
   protectCoursePage();
   if (!hasActiveMembership()) {
+    const enroll = document.querySelector("#course-locked .btn-primary");
+    if (enroll) enroll.focus();
     return;
   }
   renderSidebar();
   renderLesson();
+  if (!lessonNavBound) {
+    lessonNavBound = true;
+    const prevBtn = document.getElementById("prev-lesson");
+    const nextBtn = document.getElementById("next-lesson");
+    if (prevBtn) prevBtn.addEventListener("click", goToPrevLesson);
+    if (nextBtn) nextBtn.addEventListener("click", goToNextLesson);
+  }
+  const title = document.getElementById("lesson-title");
+  if (title) title.focus();
+}
 
-  const prevBtn = document.getElementById("prev-lesson");
-  const nextBtn = document.getElementById("next-lesson");
-  if (prevBtn) {
-    prevBtn.addEventListener("click", goToPrevLesson);
+function initCoursePicker() {
+  const picker = document.getElementById("course-picker");
+  const dialog = picker && picker.querySelector(".course-picker-dialog");
+  const viewBtn = document.getElementById("view-course-btn");
+  const reopen = document.getElementById("reopen-course-picker");
+  if (!picker || !dialog || !viewBtn) return;
+
+  picker.querySelectorAll("[data-picker-dismiss]").forEach((el) => {
+    el.addEventListener("click", () => closeCoursePicker());
+  });
+
+  dialog.addEventListener("change", (e) => {
+    if (e.target && e.target.name === "course-choice") {
+      viewBtn.disabled = e.target.value !== "basic";
+    }
+  });
+
+  viewBtn.addEventListener("click", openSelectedCourse);
+
+  if (reopen) {
+    reopen.addEventListener("click", openCoursePicker);
   }
-  if (nextBtn) {
-    nextBtn.addEventListener("click", goToNextLesson);
-  }
+
+  document.addEventListener("keydown", (e) => {
+    if (picker.classList.contains("hidden")) return;
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeCoursePicker();
+      return;
+    }
+    if (e.key !== "Tab") return;
+    const nodes = getPickerFocusable(dialog);
+    if (!nodes.length) return;
+    const first = nodes[0];
+    const last = nodes[nodes.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  openCoursePicker();
+}
+
+function initCoursePage() {
+  initCoursePicker();
 }
 
 document.addEventListener("DOMContentLoaded", initCoursePage);

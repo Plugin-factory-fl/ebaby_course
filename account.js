@@ -14,7 +14,7 @@ function renderAccount() {
 
   if (!user) {
     root.innerHTML = `
-      <h1 class="account-title">Create your Ebaby account</h1>
+      <h1 class="account-title">Create your Smooth Moves account</h1>
       <p class="account-subtitle">
         Join the membership and unlock the full at-home + club dance course with Erynn Joi (Ebaby).
       </p>
@@ -35,11 +35,11 @@ function renderAccount() {
         <p class="helper-text">
           Membership is <strong>$59.99/month</strong>. In this first version, access is simulated locally so you can preview the experience.
         </p>
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 4px;">Create account &amp; start membership</button>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 4px;">Enroll now</button>
       </form>
       <div class="spacer"></div>
       <p class="muted-link">
-        Already have a local Ebaby account? <button type="button" id="show-login">Log in</button>
+        Already have a local Smooth Moves account? <button type="button" id="show-login">Log in</button>
       </p>
     `;
 
@@ -68,7 +68,7 @@ function renderAccount() {
   if (!user.hasActiveMembership) {
     root.innerHTML = `
       <h1 class="account-title">Your membership</h1>
-      <p class="account-subtitle">Turn on your membership to unlock the full Ebaby course.</p>
+      <p class="account-subtitle">Turn on your membership to unlock the full Smooth Moves course.</p>
       <div class="stack">
         <div class="row">
           <div>
@@ -80,7 +80,7 @@ function renderAccount() {
             Inactive
           </span>
         </div>
-        <button type="button" id="activate-membership" class="btn btn-primary">Start membership</button>
+        <button type="button" id="activate-membership" class="btn btn-primary">Enroll now</button>
         <button type="button" id="go-course" class="btn btn-secondary">Go to course</button>
         <button type="button" id="logout" class="btn btn-ghost">Log out</button>
       </div>
@@ -99,7 +99,7 @@ function renderAccount() {
   root.innerHTML = `
     <h1 class="account-title">You’re in.</h1>
     <p class="account-subtitle">
-      Your Ebaby membership is active. Head to the course page to start training.
+      Your Smooth Moves membership is active. Head to the course page to start training.
     </p>
     <div class="stack">
       <div class="row">
@@ -128,8 +128,8 @@ function renderLogin() {
   const root = document.getElementById("account-root");
   if (!root) return;
   root.innerHTML = `
-    <h1 class="account-title">Log in to your Ebaby account</h1>
-    <p class="account-subtitle">If you created a local Ebaby account on this device, log in to manage your membership.</p>
+    <h1 class="account-title">Log in to your Smooth Moves account</h1>
+    <p class="account-subtitle">If you created a local Smooth Moves account on this device, log in to manage your membership.</p>
     <form class="account-form" id="login-form">
       <div class="field">
         <label for="login-email">Email</label>
@@ -144,7 +144,7 @@ function renderLogin() {
     </form>
     <div class="spacer"></div>
     <p class="muted-link">
-      New here? <button type="button" id="show-signup">Create an Ebaby account</button>
+      New here? <button type="button" id="show-signup">Create a Smooth Moves account</button>
     </p>
   `;
   const loginForm = document.getElementById("login-form");
