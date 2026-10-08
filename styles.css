@@ -238,12 +238,12 @@ button {
 }
 
 .hero h1 {
-  font-size: clamp(2.35rem, 4vw, 3.1rem);
+  font-size: clamp(2.15rem, 3.4vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.04em;
-  line-height: 1.12;
+  line-height: 1.16;
   margin: 0 0 16px;
-  max-width: 12.5em;
+  max-width: 14.5em;
 }
 
 .hero p {
@@ -1158,8 +1158,8 @@ body.course-picker-open .floating-cta {
   }
 
   .hero h1 {
-    font-size: clamp(1.85rem, 8vw, 2.35rem);
-    line-height: 1.14;
+    font-size: clamp(1.65rem, 7vw, 2.05rem);
+    line-height: 1.18;
     max-width: none;
   }
 
