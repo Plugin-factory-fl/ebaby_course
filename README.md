@@ -5,8 +5,11 @@ Static marketing and course experience for the Smooth Moves membership. This ver
 ## Pages
 
 - `index.html` – marketing home page.
+- `about.html` – instructor story and About-page checkout CTA.
 - `account.html` – create a local account, toggle membership, and manage basic status.
 - `course.html` – gated course layout with sidebar navigation and lesson content.
+
+The About page “Enroll now” button uses `STRIPE_CHECKOUT_URL` in `app.js` (currently a Stripe Payment Link placeholder).
 
 ## Local development
 
