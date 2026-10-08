@@ -3,6 +3,9 @@ const STORAGE_KEY = "ebaby_user";
 // Swap this for the live Stripe Payment Link when it's ready.
 const STRIPE_CHECKOUT_URL = "https://buy.stripe.com/REPLACE_ME";
 
+// Swap this for the live Calendly/Stripe booking link when it's ready.
+const BOOKING_URL = "https://REPLACE_ME_BOOKING_LINK";
+
 function getUser() {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -57,11 +60,18 @@ function initNav() {
 
   initFloatingCta(page);
   initStripeCheckoutLinks();
+  initBookingLinks();
 }
 
 function initStripeCheckoutLinks() {
   document.querySelectorAll("[data-stripe-checkout]").forEach((el) => {
     el.setAttribute("href", STRIPE_CHECKOUT_URL);
+  });
+}
+
+function initBookingLinks() {
+  document.querySelectorAll("[data-booking-link]").forEach((el) => {
+    el.setAttribute("href", BOOKING_URL);
   });
 }
 
